@@ -3,10 +3,48 @@
   <head>
     <meta charset="utf-8">
     <title>Anthony Vu</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="scss/portfolio.css" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.js"></script> -->
+    <script type="text/javascript" src="js/portfolio.js"></script>
+
   </head>
-  <body>
-    <p>
-      Under Construction! :P
-    </p>
+  <body ng-app="portfolioModule" ng-controller="indexCTRL">
+    <div id="outerWrapper">
+
+      <!-- Homepage header -->
+      <div id="header" class="fadeHeaders" ng-if="landingPage && fade">
+        <h3>ANTHONY VU<span>Front-End Web Developer</span></h3>
+      </div>
+
+      <!-- Menu header when not on home page-->
+      <div id="menu" class="fadeHeaders" ng-if="!landingPage && fade">
+        <ul>
+          <li><a href="#/contact" class="underline">Contact</a></li>
+          <li><a href="#/cv">CV</a></li>
+          <li><a href="#/portfolio">Portfolio</a></li>
+          <li><a href="#/about">About</a></li>
+          <li><a href="#/home">Home</a></li>
+          <span><li><img id="avLogo" src="photos/AVlogo.png" alt="" /></li></span>
+        </ul>
+      </div>
+      <!--templates will load into "innerWrapper" -->
+      <div id="innerWrapper">
+        <div id="templateLoad" ng-view></div>
+        <p id="copyright">&copy; 2016, Anthony Vu</p>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,15 @@
+<div id="contactPhoto" ng-if="fade">
+  <h2>Contact</h2>
+</div>
+
+<div id="contactContent" ng-if="fade">
+  <div>
+    <!-- links will load from angular -->
+    <a ng-repeat="contactItem in contactItems"
+       href="{{contactItem.link}}"
+       target="_blank"
+       style="background-image: url({{contactItem.photo}});"
+       class="socialMediaLinks">
+    </a>
+  </div>
+</div>
