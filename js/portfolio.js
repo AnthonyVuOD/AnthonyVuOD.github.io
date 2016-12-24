@@ -6,12 +6,12 @@ new Vue({
       if(window.innerWidth>1000){
         var landingDiv = document.getElementById('landingDiv');
         landingDiv.style.bottom = (window.pageYOffset *.11 + 25)+ "%";
-      } 
+      }
     })
     // reload when resizing window
-    window.onresize = function(){
-       location.reload();
-    }
+    window.addEventListener('resize',function(){
+      location.reload();
+    });
   }
 })
 
