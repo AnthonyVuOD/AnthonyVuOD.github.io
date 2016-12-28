@@ -9,8 +9,11 @@ new Vue({
       }
     })
     // reload when resizing window
+    var windowWidth = window.innerWidth;
     window.addEventListener('resize',function(){
-      location.reload();
+      if(window.innerWidth != windowWidth){
+        location.reload();
+      }
     });
   }
 })
