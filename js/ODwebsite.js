@@ -10,4 +10,7 @@ function initMap() {
     position: stPete,
     map:map
   });
+  google.maps.event.addDomListener(window, 'resize', function() {
+      console.log(stPete);
+  })
 }
